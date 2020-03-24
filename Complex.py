@@ -7,11 +7,13 @@ class Complex:
         return self.__reel
 
     def Getimagine(self):
-        if self.__imagine<0:
-            return str(self.__imagine)+"i"
-        if self.__imagine>=0:
-            return "+"+ str(self.__imagine)+"i"
+        return self.__imagine
 
+    def __str__(self):
+        if self.__imagine<0:
+            return str(self.__reel)+str(self.__imagine)+"i"
+        if self.__imagine>=0:
+            return str(self.__reel)+"+"+ str(self.__imagine)+"i"
 
     def __add__(self, other):
         return Complex(self.__reel+other.__reel,self.__imagine+other.__imagine)
@@ -44,10 +46,10 @@ if __name__== '__main__':
     #c7 = c2  c3
     c8 = c1 == c2
     c9 = c1 != c2
-    print(c3.Getreel(),c3.Getimagine())
-    print(c4.Getreel(),c4.Getimagine())
-    print(c5.Getreel(),c5.Getimagine())
-    print(c6.Getreel(),c6.Getimagine())
+    print(c3)
+    print(c4)
+    print(c5)
+    print(c6)
     print(c1.absolu())
     print(c8)
     print(c9)
